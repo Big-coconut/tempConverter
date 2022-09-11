@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Temperature Converter</title>
+</head>
+
+<body>
+    <h1>Simple Temperature Converter:</h1>
+    <br>
+    <Label id="far">Fahrenheit: <input type="number" id="f" placeholder="Fahrenheit" oninput="submitF()"></Label>
+    <Label id="cel">Celsius: <input type="number" id="c" placeholder="Celsius" oninput="submitC()"></Label>
+    <script>
+        function submitC() {
+            c = document.getElementById("c").value
+            if (c != "") {
+                document.getElementById("f").value = ((9 / 5) * c) + 32
+            } else {
+                document.getElementById("f").value = ""
+            }
+        }
+
+        function submitF() {
+            f = document.getElementById("f").value
+            if (f != "") {
+                document.getElementById("c").value = (5 / 9) * (f - 32)
+            } else {
+                document.getElementById("c").value = ""
+            }
+        }
+    </script>
+</body>
